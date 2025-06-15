@@ -7,6 +7,12 @@ WORKDIR /usr/src/app
 COPY . .
 
 
+
+
+
+
+
+
 #Install the python/fastapi dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 

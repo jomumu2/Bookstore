@@ -1,0 +1,29 @@
+name: Build Docer Image
+
+on:
+    push:
+        branches: [main]
+
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: Checkout code
+          uses: actions/checkout@v3
+
+        - name: Log in to docker hub
+          uses: actions/setup-action@v3
+          with:
+            username: ${{ secrets.DOCKERHUB_USERNAME }}
+            password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+        - name: bUILD dOCER Image
+          run: |
+            docker build -t jomumu1/my-node-app:latest
+
+
+        - name: Push Docker Image
+          run: |
+            docker push jomumu1/my-node-app:latest

@@ -26,4 +26,5 @@ jobs:
           with:
             context: .
             push: true
-            tags: carpearto/bookstores-api:latest
+            tags: jomumu1/bookstores-api:latest
+            
